@@ -1,20 +1,20 @@
 {
-  "id": "dev.replugged.PluginTemplate",
-  "name": "Plugin Template",
-  "description": "A plugin template",
+  "id": "dev.Teltta.AnonymiseFileNames",
+  "name": "Anonymise File Names",
+  "description": "Anonymises names of files you send",
   "author": {
-    "name": "replugged",
-    "discordID": "1000992611840049192",
-    "github": "replugged-org"
+    "name": "teltta",
+    "discordID": "365145249074642956",
+    "github": "Teltta"
   },
   "version": "1.0.0",
   "updater": {
-    "type": "github",
-    "id": "replugged-org/plugin-template"
+    "type": "store",
+    "id": "dev.Teltta.AnonymiseFileNames"
   },
   "license": "MIT",
   "type": "replugged-plugin",
   "renderer": "src/index.ts",
-  "source": "https://github.com/replugged-org/plugin-template",
-  "image": ["https://i.imgur.com/14CNs3a.png?CHANGE-THIS-URL"]
+  "source": "https://github.com/Teltta/AnonymiseFileNames",
+  "image": ["https://i.imgur.com/14CNs3a.png"]
 }
