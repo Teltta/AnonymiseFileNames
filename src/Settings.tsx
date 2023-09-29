@@ -19,42 +19,38 @@ export function Settings(): React.ReactElement {
         {...util.useSetting(cfg, "method")}>
         Method
       </SelectItem>
-      <FormItem>
-        <div style={{ marginBottom: "20px" }}>
-          <Text title="Random Characters Length"></Text>
-          <TextInput
-            value={randCharLen.toString()}
-            onChange={(value) => {
-              // eslint-disable-next-line
-              if (value == null) {
-                setRandCharLen("");
-              } else if (!isNaN(Number(value))) {
-                cfg.set("randomCharLength", parseInt(value, 10));
-                setRandCharLen(value);
-              }
-            }}
-            inputMode="numeric"
-            required={true}
-            minLength={1}></TextInput>
-        </div>
+      <FormItem style={{marginBottom: "20px"}}>
+        <Text>Random Characters Length</Text>
+        <TextInput
+          value={randCharLen.toString()}
+          onChange={(value) => {
+            // eslint-disable-next-line
+            if (value == null) {
+              setRandCharLen("");
+            } else if (!isNaN(Number(value))) {
+              cfg.set("randomCharLength", parseInt(value, 10));
+              setRandCharLen(value);
+            }
+          }}
+          inputMode="numeric"
+          required={true}
+          minLength={1}></TextInput>
       </FormItem>
       <FormItem>
-        <div>
-          <Text title="Consistent Filename"></Text>
-          <TextInput
-            value={constFilename}
-            onChange={(conFilename) => {
-              // eslint-disable-next-line
-              if (conFilename == null) {
-                setConstFilename("");
-              } else {
-                cfg.set("consistentFilename", conFilename);
-                setConstFilename(conFilename);
-              }
-            }}
-            minLength={1}
-            required={true}></TextInput>
-        </div>
+        <Text>Consistent Filename</Text>
+        <TextInput
+          value={constFilename}
+          onChange={(conFilename) => {
+            // eslint-disable-next-line
+            if (conFilename == null) {
+              setConstFilename("");
+            } else {
+              cfg.set("consistentFilename", conFilename);
+              setConstFilename(conFilename);
+            }
+          }}
+          minLength={1}
+          required={true}></TextInput>
       </FormItem>
     </>
   );
