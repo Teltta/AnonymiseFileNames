@@ -1,6 +1,6 @@
 {
   "name": "anonymise-file-names",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Anonymises names of files you send",
   "engines": {
     "node": ">=18.0.0",
