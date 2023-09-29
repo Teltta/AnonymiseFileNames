@@ -1,21 +1,11 @@
 import { common, components, util } from "replugged";
 import { cfg } from ".";
 
-const { TextInput, SelectItem, FormItem } = components;
+const { TextInput, SelectItem, FormItem, Text } = components;
 const { React } = common;
 
 export function Settings(): React.ReactElement {
   const options = ["Random Characters", "Consistent", "Timestamp"];
-  const textStyle: React.CSSProperties = {
-    color: "var(--header-secondary)",
-    fontFamily: "var(--font-display)",
-    lineHeight: "16px",
-    fontSize: "12px",
-    fontWeight: 700,
-    letterSpacing: "0.02em",
-    fontStyle: "inherit",
-    textTransform: "uppercase",
-  };
 
   let [randCharLen, setRandCharLen] = React.useState(cfg.get("randomCharLength", 7).toString());
   let [constFilename, setConstFilename] = React.useState(cfg.get("consistentFilename"));
@@ -31,13 +21,11 @@ export function Settings(): React.ReactElement {
       </SelectItem>
       <FormItem>
         <div style={{ marginBottom: "20px" }}>
-          <div style={textStyle}>
-            <h2>Random Characters Length</h2>
-          </div>
+          <Text title="Random Characters Length"></Text>
           <TextInput
             value={randCharLen.toString()}
             onChange={(value) => {
-              if (value == null) {
+              if (value == null) { // eslint-disable-line
                 setRandCharLen("");
               } else if (!isNaN(Number(value))) {
                 cfg.set("randomCharLength", parseInt(value, 10));
@@ -51,13 +39,11 @@ export function Settings(): React.ReactElement {
       </FormItem>
       <FormItem>
         <div>
-          <div style={textStyle}>
-            <h2>Consistent Filename</h2>
-          </div>
+          <Text title="Consistent Filename"></Text>
           <TextInput
             value={constFilename}
             onChange={(conFilename) => {
-              if (conFilename == null) {
+              if (conFilename == null) { // eslint-disable-line
                 setConstFilename("");
               } else {
                 cfg.set("consistentFilename", conFilename);
