@@ -23,7 +23,6 @@ export function Settings(): React.ReactElement {
   return (
     <>
       <SelectItem
-        style={{ marginBottom: 0 }}
         options={options.map((option) => {
           return { label: option, value: option };
         })}
@@ -31,7 +30,7 @@ export function Settings(): React.ReactElement {
         Method
       </SelectItem>
       <FormItem>
-        <div>
+        <div style={{ marginBottom: "20px" }}>
           <div style={textStyle}>
             <h2>Random Characters Length</h2>
           </div>
