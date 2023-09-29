@@ -19,7 +19,7 @@ export function Settings(): React.ReactElement {
         {...util.useSetting(cfg, "method")}>
         Method
       </SelectItem>
-      <FormItem style={{marginBottom: "20px"}}>
+      <FormItem style={{ marginBottom: "20px" }}>
         <Text>Random Characters Length</Text>
         <TextInput
           value={randCharLen.toString()}
