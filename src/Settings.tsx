@@ -25,7 +25,8 @@ export function Settings(): React.ReactElement {
           <TextInput
             value={randCharLen.toString()}
             onChange={(value) => {
-              if (value == null) { // eslint-disable-line
+              // eslint-disable-next-line
+              if (value == null) {
                 setRandCharLen("");
               } else if (!isNaN(Number(value))) {
                 cfg.set("randomCharLength", parseInt(value, 10));
@@ -43,7 +44,8 @@ export function Settings(): React.ReactElement {
           <TextInput
             value={constFilename}
             onChange={(conFilename) => {
-              if (conFilename == null) { // eslint-disable-line
+              // eslint-disable-next-line
+              if (conFilename == null) {
                 setConstFilename("");
               } else {
                 cfg.set("consistentFilename", conFilename);
