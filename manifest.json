@@ -16,5 +16,7 @@
   "type": "replugged-plugin",
   "renderer": "src/index.ts",
   "source": "https://github.com/Teltta/AnonymiseFileNames",
-  "image": ["https://i.imgur.com/14CNs3a.png"]
+  "image": [
+    "https://i.imgur.com/14CNs3a.png"
+  ]
 }
