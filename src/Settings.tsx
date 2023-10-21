@@ -1,4 +1,4 @@
-import { common, components, util } from "replugged";
+import { common, components } from "replugged";
 import { cfg } from ".";
 
 const { TextInput, SelectItem, FormItem, Text } = components;
@@ -7,6 +7,7 @@ const { React } = common;
 export function Settings(): React.ReactElement {
   const options = ["Random Characters", "Consistent", "Timestamp"];
 
+  let [method, setMethod] = React.useState(cfg.get("method"));
   let [randCharLen, setRandCharLen] = React.useState(cfg.get("randomCharLength", 7).toString());
   let [constFilename, setConstFilename] = React.useState(cfg.get("consistentFilename"));
 
@@ -16,7 +17,11 @@ export function Settings(): React.ReactElement {
         options={options.map((option) => {
           return { label: option, value: option };
         })}
-        {...util.useSetting(cfg, "method")}>
+        value={method}
+        onChange={(val) => {
+          cfg.set("method", val);
+          setMethod(val);
+        }}>
         Method
       </SelectItem>
       <FormItem style={{ marginBottom: "20px" }}>
@@ -24,25 +29,25 @@ export function Settings(): React.ReactElement {
         <TextInput
           value={randCharLen.toString()}
           onChange={(value) => {
-            // eslint-disable-next-line
-            if (value == null) {
+            if (!value) {
               setRandCharLen("");
             } else if (!isNaN(Number(value))) {
-              cfg.set("randomCharLength", parseInt(value, 10));
-              setRandCharLen(value);
+              const num = Math.min(900, Math.max(1, parseInt(value, 10)));
+              cfg.set("randomCharLength", num);
+              setRandCharLen(num.toString());
             }
           }}
           inputMode="numeric"
           required={true}
-          minLength={1}></TextInput>
+          minLength={1}
+          disabled={method != "Random Characters"}></TextInput>
       </FormItem>
       <FormItem>
         <Text>Consistent Filename</Text>
         <TextInput
           value={constFilename}
           onChange={(conFilename) => {
-            // eslint-disable-next-line
-            if (conFilename == null) {
+            if (!conFilename) {
               setConstFilename("");
             } else {
               cfg.set("consistentFilename", conFilename);
@@ -50,7 +55,9 @@ export function Settings(): React.ReactElement {
             }
           }}
           minLength={1}
-          required={true}></TextInput>
+          maxLength={900}
+          required={true}
+          disabled={method != "Consistent"}></TextInput>
       </FormItem>
     </>
   );

@@ -36,7 +36,7 @@ devDependencies:
     version: 3.0.3
   replugged:
     specifier: ^4.6.2
-    version: 4.6.2(@codemirror/view@6.19.0)(@lezer/common@1.0.4)(typescript@5.2.2)
+    version: 4.6.2(@codemirror/view@6.19.0)(@lezer/common@1.0.4)
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -745,7 +745,7 @@ packages:
       - '@parcel/core'
     dev: true
 
-  /@parcel/config-default@2.9.3(@parcel/core@2.9.3)(typescript@5.2.2):
+  /@parcel/config-default@2.9.3(@parcel/core@2.9.3):
     resolution: {integrity: sha512-tqN5tF7QnVABDZAu76co5E6N8mA9n8bxiWdK4xYyINYFIEHgX172oRTqXTnhEMjlMrdmASxvnGlbaPBaVnrCTw==}
     peerDependencies:
       '@parcel/core': ^2.9.3
@@ -755,7 +755,7 @@ packages:
       '@parcel/core': 2.9.3
       '@parcel/namer-default': 2.9.3(@parcel/core@2.9.3)
       '@parcel/optimizer-css': 2.9.3(@parcel/core@2.9.3)
-      '@parcel/optimizer-htmlnano': 2.9.3(@parcel/core@2.9.3)(typescript@5.2.2)
+      '@parcel/optimizer-htmlnano': 2.9.3(@parcel/core@2.9.3)
       '@parcel/optimizer-image': 2.9.3(@parcel/core@2.9.3)
       '@parcel/optimizer-svgo': 2.9.3(@parcel/core@2.9.3)
       '@parcel/optimizer-swc': 2.9.3(@parcel/core@2.9.3)
@@ -789,7 +789,6 @@ packages:
       - relateurl
       - srcset
       - terser
-      - typescript
       - uncss
     dev: true
 
@@ -925,12 +924,12 @@ packages:
       - '@parcel/core'
     dev: true
 
-  /@parcel/optimizer-htmlnano@2.9.3(@parcel/core@2.9.3)(typescript@5.2.2):
+  /@parcel/optimizer-htmlnano@2.9.3(@parcel/core@2.9.3):
     resolution: {integrity: sha512-9g/KBck3c6DokmJfvJ5zpHFBiCSolaGrcsTGx8C3YPdCTVTI9P1TDCwUxvAr4LjpcIRSa82wlLCI+nF6sSgxKA==}
     engines: {node: '>= 12.0.0', parcel: ^2.9.3}
     dependencies:
       '@parcel/plugin': 2.9.3(@parcel/core@2.9.3)
-      htmlnano: 2.0.4(svgo@2.8.0)(typescript@5.2.2)
+      htmlnano: 2.0.4(svgo@2.8.0)
       nullthrows: 1.1.1
       posthtml: 0.16.6
       svgo: 2.8.0
@@ -942,7 +941,6 @@ packages:
       - relateurl
       - srcset
       - terser
-      - typescript
       - uncss
     dev: true
 
@@ -2220,7 +2218,7 @@ packages:
       xdg-basedir: 5.1.0
     dev: true
 
-  /cosmiconfig@8.3.6(typescript@5.2.2):
+  /cosmiconfig@8.3.6:
     resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2233,7 +2231,6 @@ packages:
       js-yaml: 4.1.0
       parse-json: 5.2.0
       path-type: 4.0.0
-      typescript: 5.2.2
     dev: true
 
   /crelt@1.0.6:
@@ -3033,7 +3030,7 @@ packages:
       function-bind: 1.1.1
     dev: true
 
-  /htmlnano@2.0.4(svgo@2.8.0)(typescript@5.2.2):
+  /htmlnano@2.0.4(svgo@2.8.0):
     resolution: {integrity: sha512-WGCkyGFwjKW1GeCBsPYacMvaMnZtFJ0zIRnC2NCddkA+IOEhTqskXrS7lep+3yYZw/nQ3dW1UAX4yA/GJyR8BA==}
     peerDependencies:
       cssnano: ^6.0.0
@@ -3062,12 +3059,10 @@ packages:
       uncss:
         optional: true
     dependencies:
-      cosmiconfig: 8.3.6(typescript@5.2.2)
+      cosmiconfig: 8.3.6
       posthtml: 0.16.6
       svgo: 2.8.0
       timsort: 0.3.0
-    transitivePeerDependencies:
-      - typescript
     dev: true
 
   /htmlparser2@7.2.0:
@@ -4059,7 +4054,7 @@ packages:
       rc: 1.2.8
     dev: true
 
-  /replugged@4.6.2(@codemirror/view@6.19.0)(@lezer/common@1.0.4)(typescript@5.2.2):
+  /replugged@4.6.2(@codemirror/view@6.19.0)(@lezer/common@1.0.4):
     resolution: {integrity: sha512-StxO225HKScI1glKID4LHDpWoBb5qcwfEmZXx6vdvo8s/TVA9e+oC+gLesQ0o4Pii075ePRcc8tc3pTFD9QYNg==}
     engines: {node: '>=18.0.0', pnpm: '>=8.0.0'}
     hasBin: true
@@ -4071,7 +4066,7 @@ packages:
       '@electron/asar': 3.2.4
       '@lezer/highlight': 1.1.6
       '@octokit/rest': 19.0.13
-      '@parcel/config-default': 2.9.3(@parcel/core@2.9.3)(typescript@5.2.2)
+      '@parcel/config-default': 2.9.3(@parcel/core@2.9.3)
       '@parcel/core': 2.9.3
       '@parcel/transformer-sass': 2.9.3(@parcel/core@2.9.3)
       adm-zip: 0.5.10
@@ -4098,7 +4093,6 @@ packages:
       - relateurl
       - srcset
       - terser
-      - typescript
       - uncss
       - utf-8-validate
     dev: true
